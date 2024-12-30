@@ -15,7 +15,7 @@ export default function textEditor() {
   
   
   useEffect(() => {
-  const s = io('https://neo-backend.netlify.app');
+  const s = io('https://neodocs-backend.onrender.com');
     setSocket(s);
 
     return () =>{
