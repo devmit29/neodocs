@@ -27,7 +27,7 @@ export default function textEditor() {
     if (socket == null || quill == null) return;
    
     socket.once('load-document', (document, numberOfUsers) => {
-      console.log(numberOfUsers);
+      console.log("Number of users accessing this document: ", numberOfUsers);
       quill.setContents(document);
       quill.enable();
     })
