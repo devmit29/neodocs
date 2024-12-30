@@ -89,25 +89,25 @@ export default function textEditor() {
   }, [socket, cursors]);
   
 
-  useEffect(() => {
-    if (!socket || !quill) return;
+  // useEffect(() => {
+  //   if (!socket || !quill) return;
   
-    const updateCursor = () => {
-      const range = quill.getSelection();
-      if (range) {
-        socket.emit('update-cursor', {
-          userId: socket.id,
-          range,
-          documentId, // Ensure the documentId is sent to manage rooms correctly
-        });
-      }
-    };
+  //   const updateCursor = () => {
+  //     const range = quill.getSelection();
+  //     if (range) {
+  //       socket.emit('update-cursor', {
+  //         userId: socket.id,
+  //         range,
+  //         documentId,
+  //       });
+  //     }
+  //   };
   
-    quill.on('selection-change', updateCursor);
-    return () => {
-      quill.off('selection-change', updateCursor);
-    };
-  }, [socket, quill, documentId]);
+  //   quill.on('selection-change', updateCursor);
+  //   return () => {
+  //     quill.off('selection-change', updateCursor);
+  //   };
+  // }, [socket, quill, documentId]);
   
 
   const wrapperRef = useCallback((wrapper) => {
