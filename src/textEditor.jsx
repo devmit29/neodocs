@@ -15,7 +15,7 @@ export default function textEditor() {
   
   
   useEffect(() => {
-  const s = io('http://localhost:3001');
+  const s = io('https://neo-backend.netlify.app/');
     setSocket(s);
 
     return () =>{
